@@ -11,6 +11,12 @@ scaler = joblib.load("scaler.pkl")
 feature_columns = joblib.load("feature_columns.pkl")
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",
+    "https://loanfrontend-three.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # for development
